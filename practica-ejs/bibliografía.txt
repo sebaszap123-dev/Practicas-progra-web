@@ -1,1 +1,2 @@
 https://www.geeksforgeeks.org/difference-between-index-ejs-and-index-html/
+https://ionicabizau.github.io/ejs-playground/
