@@ -3,6 +3,24 @@
         <link href="assets/style.css" type="text/css" rel="stylesheet" > 
     </head>
     <body>
+        <ul>
+            <%= if(<%= ID %> % 2 == 0){ %>
+                <%= var num = ID * 2  %> 
+                <% = for(var i = 0; i < num; i++){ %>
+                    <Li>
+                        Es un número par
+                    </Li>
+                <%= } %>
+            <%= }  else {%>
+                <%= if(<%= ID %> % 2 != 0){ %>
+                    <%= var num = ID%>
+                    <% = for(var i = 0; i < num; i++){ %>
+                        <Li>
+                            Es un número impar
+                        </Li>
+                    <%= } %>
+            <%= } %>
+        </ul>
         <h1>Person: <%= ID %></h1>
     </body>
 </html>
