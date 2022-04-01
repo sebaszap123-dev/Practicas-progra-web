@@ -1,0 +1,2 @@
+Hacer que la vista persona reciba un número y si ese número es par o impar renderizar si es impar ese número de veces el texto "es impar"
+y si es par multiplicar el número 2 por el número par;
