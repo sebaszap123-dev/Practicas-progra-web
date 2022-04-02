@@ -1,0 +1,13 @@
+<% var num1 = 2 
+    var num2 = 3
+%>
+
+<% if(num1 % 2 == 0){%>
+    <% for(var i = 0; i < num1 * 2; ++i) {%>
+  - <%=num1%> es par<% } %>
+<% } %>
+
+<% if(num2 % 2 != 0){%>
+    <% for(var i = 0; i < num2; ++i) {%>
+  - <%=num2%> es impar<% } %>
+<% } %>
