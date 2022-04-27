@@ -14,21 +14,26 @@ app.use("/", function (req, res, next) {
   next();
 });
 /* Este codigo ayuda a realizar console logs al cambiar de raíz */
-
+// En este caso el codigo ta en index para facilitar la lectura de los documentos
+// Implementación de otras practicas
 app.get("/", function (req, res) {
   res.render("index");
 });
 // Modifique la ruta raíz para recibir un style del archivo style.css de la carpeta public
 
-var html = {
-  first: "<html><head></head><body><h1>Person: ",
-  second: "</h1></body></html>",
-};
+// var html = {
+//   first: "<html><head></head><body><h1>Person: ",
+//   second: "</h1></body></html>",
+// };
 
 // Ya la tenia desde la practica 10 esta ruta
 // cambio, adicción de QRST para recibir el query
 app.get("/person/:id", function (req, res) {
-  res.render("person", { ID: req.params.id, QRST: req.query.qrst });
+  res.render("person", {
+    ID: req.params.id,
+    SMS: req.query.message,
+    TIME: req.query.time,
+  });
 });
 
 app.get("/api", function (req, res) {
