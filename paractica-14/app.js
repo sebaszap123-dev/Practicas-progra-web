@@ -2,7 +2,7 @@ const { application } = require("express");
 var express = require("express");
 var app = express();
 
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 
 var port = process.env.PORT || 3000;
 // insetar codigo app.use
@@ -16,7 +16,7 @@ app.use("/", function (req, res, next) {
 /* Este codigo ayuda a realizar console logs al cambiar de raíz */
 
 app.get("/", function (req, res) {
-  res.render('index');
+  res.render("index");
 });
 // Modifique la ruta raíz para recibir un style del archivo style.css de la carpeta public
 
@@ -26,8 +26,9 @@ var html = {
 };
 
 // Ya la tenia desde la practica 10 esta ruta
+// cambio, adicción de QRST para recibir el query
 app.get("/person/:id", function (req, res) {
-  res.render('person', { ID: req.params.id});
+  res.render("person", { ID: req.params.id, QRST: req.query.qrst });
 });
 
 app.get("/api", function (req, res) {
