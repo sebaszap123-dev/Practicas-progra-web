@@ -1,9 +1,9 @@
 const { application } = require("express");
 var express = require("express");
 var app = express();
-const bp = require("body-parser");
-app.use(bp.json());
-app.use(bp.urlencoded({ extended: true }));
+// const bp = require("body-parser");
+// app.use(bp.json());
+// app.use(bp.urlencoded({ extended: true }));
 // var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.set("view engine", "ejs");
@@ -12,6 +12,9 @@ var port = process.env.PORT || 3000;
 // insetar codigo app.use
 app.use("/assets", express.static(__dirname + "/public"));
 /* Sirve para especificarle a express que carpeta se usara como assets en el local */
+
+/* Sirve para parsear las peticiones del body también*/
+app.use(express.urlencoded({ extended: false }));
 
 app.use("/", function (req, res, next) {
   console.log("Request  Url" + req.url);
