@@ -5,6 +5,11 @@
     <link href="assets/style.css" type="text/css" rel="stylesheet" />
     <!-- Se agrego el title -->
     <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <form action="/student" method="post">
@@ -14,5 +19,18 @@
       <input type="text" name="lname" name="lname" id="lname" /><br /><br />
       <input type="submit" value="Submit" />
     </form>
+    <!-- Sirve para especificar que cuando suceda el endpoint aseguraremos que aparezca 
+    nuestra petición.
+    Retorna el Nombre: Juan y Apellido Parra
+    -->
+    <script>
+      $.ajax({
+        type: "POST",
+        url: "/personjson",
+        data: JSON.stringify({ firstName: "Juan", lastName: "Parra" }),
+        dataType: "json",
+        contentType: "aplication/json",
+      });
+    </script>
   </body>
 </html>

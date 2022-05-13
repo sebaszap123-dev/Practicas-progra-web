@@ -1,9 +1,9 @@
 const { application } = require("express");
 var express = require("express");
 var app = express();
-const bp = require("body-parser");
-app.use(bp.json());
-app.use(bp.urlencoded({ extended: true }));
+// const bp = require("body-parser");
+// app.use(bp.json());
+// app.use(bp.urlencoded({ extended: true }));
 // var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.set("view engine", "ejs");
@@ -12,6 +12,9 @@ var port = process.env.PORT || 3000;
 // insetar codigo app.use
 app.use("/assets", express.static(__dirname + "/public"));
 /* Sirve para especificarle a express que carpeta se usara como assets en el local */
+
+/* Sirve para parsear las peticiones del body también*/
+app.use(express.urlencoded({ extended: false }));
 
 app.use("/", function (req, res, next) {
   console.log("Request  Url" + req.url);
@@ -54,6 +57,15 @@ app.get("/student", function (req, res) {
 app.post("/student", function (req, res) {
   res.send(`First name es: ${req.body.fname} Last name es: ${req.body.lname}`);
   console.log(req.body);
+});
+
+/* Agregamos un nuevo endpoint para que se ejecute un callback y para poder parsear en el
+  usando express para usar json
+*/
+app.post("/personjson", express.json({ type: "*/*" }), function (req, res) {
+  console.log(`El objeto contiene: ${req.body}`);
+  console.log(`Nombre: ${req.body.firstName}`);
+  console.log(`Apellido: ${req.body.lastName}`);
 });
 
 app.listen(port);
