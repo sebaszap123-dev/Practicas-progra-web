@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="assets/style.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Person: <%= ID %></h1>
+    <!-- <h2>Query: string value <%= SMS %></h2> -->
+    <!-- <h2>Query: string value <%= TIME %></h2> -->
+    <!-- Un switch con un for para recibir time y en base a time repetir el mensaje el mismo número de veces -->
+    <% switch (SMS) { case 'Hola': %> <% for(var i=0; i< TIME; i++) { %>
+    <li>Hola persona uwu</li>
+    <% } %> <% break; case 'Adios': %> <% for(var i=0; i< TIME; i++) { %>
+    <li>Adios persona uwu</li>
+    <% } %> <% break; case 'Bye': %> <% for(var i=0; i< TIME; i++) { %>
+    <li>Bye persona uwu</li>
+    <% } %> <% break; default: %> <% for(var i=0; i< TIME; i++) { %>
+    <li><%= SMS %> <%= ID %></li>
+    <% } %>
+    <h3></h3>
+    <% break; } %>
+  </body>
+</html>
