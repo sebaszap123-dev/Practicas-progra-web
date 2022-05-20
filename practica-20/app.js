@@ -2,17 +2,16 @@ const mongoose = require("mongoose");
 const express = require("express");
 const personsRoutes = require("./src/routes/router");
 var app = express();
+app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
-
+app.use(express.static(__dirname + "../public"));
 var port = 3000;
 // insetar codigo app.use
-app.use("/assets", express.static(__dirname + "/public"));
 /* Sirve para especificarle a express que carpeta se usara como assets en el local */
 
 /* Sirve para parsear las peticiones del body también*/
 app.use(personsRoutes);
-app.use(express.urlencoded({ extended: false }));
 
 app.use("/", function (req, res, next) {
   console.log("Request  Url" + req.url);

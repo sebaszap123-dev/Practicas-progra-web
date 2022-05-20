@@ -13,10 +13,20 @@ router.get("/persons", function (req, res, next) {
   });
 });
 
-router.post("/persons", async (req, res, next) => {
+router.get("/person", function (req, res) {
+  res.render("person");
+});
+
+router.post("/addPerson", async (req, res, next) => {
   // Aquí hacemos la petición del body parseado
-  const { fname, lname } = req.body;
-  const newPerson = new Person({ firstName: fname, lastName: lname });
+  console.log(req.body);
+  const newPerson = new Person({
+    nss: req.body.nss,
+    firstName: req.body.name,
+    lastName: req.body.lastName,
+    age: req.body.age,
+    typeBlood: req.body.typeBlood,
+  });
   console.log(newPerson);
   // Desde la practica 20 lo habia implementado pero en esta ocasión hablare más del como y porque ya lo habia implementado
   /* Esta practica trata de llevar acabo el guardado de datos en la base de datos, el método save esta proporcionado por mongoose
@@ -25,8 +35,7 @@ router.post("/persons", async (req, res, next) => {
   MONGODB_URI y TESTING
   */
   await newPerson.save();
-  res.send(`First name es: ${fname} Last name es: ${lname}`);
-  console.log(req.body);
+  res.redirect("/persons");
 });
 
 module.exports = router;
