@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="assets/style.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <form action="/addPerson" method="POST">
+      <label for="nss">NSS:</label>
+      <input type="number" id="nss" name="nss" /><br /><br />
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" /><br /><br />
+      <label for="lastName">Apellido:</label>
+      <input type="text" id="lastName" name="lastName" /><br /><br />
+      <label for="age">Edad:</label>
+      <input type="number" id="age" name="age" /><br /><br />
+      <label for="typeBlood">Tipo de sangre:</label>
+      <input type="text" id="typeBlood" name="typeBlood" /><br /><br />
+      <input type="submit" value="submit" />
+    </form>
+  </body>
+</html>
