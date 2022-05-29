@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href=assets/style.css type=text/css rel=stylesheet />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listado de estudiantes</title>
+  </head>
+  <body>
+    <h1>Estudiantes</h1>
+    <!--Se mostrará el listado de estudiantes que hay en la BD a traves de una tabla-->
+    <table>
+      <thead class="header">
+        <tr class="titles">
+          <th>NSS</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Edad</th>
+          <th>Tipo de sangre</th>
+        </tr>
+      </thead>
+      <!--Hacemos un forEach para estar poniendo los datos de todos los estudiantes que hay-->
+      <tbody class="body">
+        <% students.forEach( function (student){ %>
+        <tr>
+          <td><%=student.nss%></td>
+          <td><%=student.firstName%></td>
+          <td><%=student.lastName%></td>
+          <td><%=student.age%></td>
+          <td><%=student.typeBlood%></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <br />
+    <a href="./main">Back</a><br />
+  </body>
+</html>
