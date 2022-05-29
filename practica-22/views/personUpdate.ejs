@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="assets/style.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- * formulario para hacer un update action es el updatePerson post-->
+    <form action="/updatePerson/<%= person._id%>" method="POST">
+      <label for="nss">NSS:</label>
+      <input
+        type="number"
+        id="nss"
+        name="nss"
+        value="<%= person.nss %>"
+      /><br /><br />
+      <label for="name">Nombre:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value="<%= person.firstName %>"
+      /><br /><br />
+      <label for="lastName">Apellido:</label>
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        value="<%= person.lastName %>"
+      /><br /><br />
+      <label for="age">Edad:</label>
+      <input
+        type="number"
+        id="age"
+        name="age"
+        value="<%= person.age %>"
+      /><br /><br />
+      <label for="typeBlood">Tipo de sangre:</label>
+      <input
+        type="text"
+        id="typeBlood"
+        name="typeBlood"
+        value="<%= person.typeBlood %>"
+      /><br /><br />
+      <label for="id">ID:</label>
+      <input
+        type="text"
+        id="id"
+        name="id"
+        value="<%= person._id %>"
+        disabled="true"
+      /><br /><br />
+      <input type="submit" value="submit" />
+    </form>
+    <a href="./index"></a>
+  </body>
+</html>
