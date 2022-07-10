@@ -1,0 +1,29 @@
+body {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tr.titles {
+  background-color: #d63e3e;
+}
+
+thead.header td {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  padding: 15px;
+}
+
+tbody.body td {
+  color: black;
+  padding: 15px;
+}
+
+td {
+  border-style: solid;
+  border-color: #cccccc;
+  border-width: 1px;
+}
